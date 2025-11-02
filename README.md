@@ -61,13 +61,13 @@ python train.py
 ```
 This script will:
 
-Load and augment the data.
+* Load and augment the data.
 
-Train the model using transfer learning.
+* Train the model using `transfer learning`.
 
-Save the final model as office_goods_classifier.keras.
+* Save the final model as `office_goods_classifier.keras`.
 
-Print a full evaluation report (Accuracy, F1-score, Confusion Matrix) on the `test/` set.
+* Print a full evaluation report (Accuracy, F1-score, Confusion Matrix) on the `test/` set.
 
 
 ### 2. Evaluating a Trained Model
