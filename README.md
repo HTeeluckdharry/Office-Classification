@@ -115,23 +115,17 @@ Macro F1-Score: 0.98
 ![Confusion Matrix](outputs/confusion_matrix.png)
 Performance: The model performs very well, with most predictions being correct. The correct predictions are shown on the main diagonal (top-left to bottom-right).
 
-glass: 10 correct predictions.
-
-keyboard: 13 correct predictions.
-
-mouse: 19 correct predictions.
-
-notebook: 8 correct predictions.
-
-pen: 11 correct predictions.
-
-stapler: 9 correct predictions.
+* glass: 10 correct predictions.
+* keyboard: 13 correct predictions.
+* mouse: 19 correct predictions.
+* notebook: 8 correct predictions.
+* pen: 11 correct predictions.
+* stapler: 9 correct predictions.
 
 Errors: There are only two misclassifications, both involving the 'mouse' class:
 
-1 'mouse' was incorrectly predicted as 'glass'.
-
-1 'mouse' was incorrectly predicted as 'keyboard'.
+* 1 'mouse' was incorrectly predicted as 'glass'.
+* 1 'mouse' was incorrectly predicted as 'keyboard'.
 
 ### ❌ Brief Error Analysis
 
