@@ -54,7 +54,7 @@ def post_process_prediction(prediction):
     return pred_class, confidence
 
 
-# --- MODIFIED THIS FUNCTION ---
+
 def classify_image(image_path, root_window):
     """
     Classifies a single image file and displays it in a NEW TKINTER WINDOW.
@@ -92,7 +92,7 @@ def classify_image(image_path, root_window):
     # Put text on the *resized* frame
     cv2.putText(display_frame, label_text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-    # --- NEW: Convert OpenCV/Numpy image to Tkinter-compatible image ---
+    # --- Convert OpenCV/Numpy image to Tkinter-compatible image ---
     # 1. Convert color from BGR (OpenCV) to RGB (PIL)
     img_rgb = cv2.cvtColor(display_frame, cv2.COLOR_BGR2RGB)
     # 2. Convert Numpy array to PIL Image
@@ -100,7 +100,7 @@ def classify_image(image_path, root_window):
     # 3. Convert PIL Image to ImageTk.PhotoImage
     tk_image = ImageTk.PhotoImage(pil_image)
 
-    # --- NEW: Create a new Toplevel window to display the image ---
+    # --- Create a new Toplevel window to display the image ---
     image_window = tk.Toplevel(root_window)
     image_window.title(f"Result: {pred_class}")
     image_window.resizable(False, False)
@@ -139,7 +139,6 @@ def classify_camera():
         return
 
     print("Camera feed opened. Press 'q' to quit.")
-    # (Rest of this function is unchanged)
     while True:
         ret, frame = cap.read()
         if not ret:
@@ -163,10 +162,7 @@ def classify_camera():
     cv2.destroyAllWindows()
 
 
-# --- 3. GUI Helper Functions ---
-
-# --- MODIFIED THIS FUNCTION ---
-# (start_camera is unchanged)
+# --- 3. GUI Functions ---
 def start_camera(root_window):
     """Hides the main menu and starts the live camera feed."""
     print("\nStarting live camera feed...")
@@ -180,8 +176,6 @@ def start_camera(root_window):
         print("Camera feed closed. Returning to menu.")
         root_window.deiconify()  # Show the main menu again ("Back" button)
 
-
-# --- MODIFIED THIS FUNCTION ---
 def start_image_classification(root_window):
     """Opens a file dialog, then calls the function to show the image."""
     print("\nOpening file dialog...")
@@ -196,7 +190,6 @@ def start_image_classification(root_window):
 
     print(f"File selected: {image_path}")
 
-    # --- CHANGED ---
     # We no longer hide/show the main window.
     # We just call classify_image and pass the root window to it,
     # so it can create a pop-up ON TOP of the main window.
@@ -209,7 +202,7 @@ def start_image_classification(root_window):
         print("Image window closed. Returning to menu.")
 
 
-# --- 4. Main execution logic (Unchanged from previous GUI) ---
+# --- 4. Main execution logic  ---
 if __name__ == "__main__":
     print("Starting GUI...")
 
