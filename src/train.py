@@ -7,14 +7,17 @@ from sklearn.metrics import classification_report, confusion_matrix
 import numpy as np
 import os
 
-# Install the following in terminal
-# pip install tensorflow scikit-learn matplotlib seaborn opencv-python
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, os.pardir))
 
 # --- Configuration ---
-DATA_DIR = './dataset'  # Set to your main data directory
+DATA_DIR = os.path.join(ROOT_DIR, 'dataset')
 TRAIN_DIR = os.path.join(DATA_DIR, 'train')
 VALID_DIR = os.path.join(DATA_DIR, 'valid')
 TEST_DIR = os.path.join(DATA_DIR, 'test')
+MODEL_SAVE_PATH = os.path.join(ROOT_DIR, 'models', 'office_goods_classifier.keras')
+CM_SAVE_PATH = os.path.join(ROOT_DIR, 'outputs', 'confusion_matrix.png')
 
 # Your specific classes
 CLASSES = ['glass', 'keyboard', 'mouse', 'notebook', 'pen', 'stapler']
@@ -26,7 +29,7 @@ BATCH_SIZE = 32
 INITIAL_EPOCHS = 10
 FINE_TUNE_EPOCHS = 10
 LEARNING_RATE = 0.001
-FINE_TUNE_LEARNING_RATE = 0.00001 # 1e-5
+FINE_TUNE_LEARNING_RATE = 0.00001
 
 # --- 1. Load Data ---
 print("Loading datasets...")
@@ -147,7 +150,7 @@ history_fine = model.fit(
 )
 
 # --- 5. Save Model ---
-model.save('office_goods_classifier.keras')
+model.save(MODEL_SAVE_PATH)
 print("\nModel saved as 'office_goods_classifier.keras'")
 
 # --- 6. Evaluation on Test Set (as required) ---
@@ -187,5 +190,5 @@ sns.heatmap(cm, annot=True, fmt='g', cmap='Blues',
 plt.xlabel('Predicted Label')
 plt.ylabel('True Label')
 plt.title('Confusion Matrix')
-plt.savefig('confusion_matrix.png')
+plt.savefig(CM_SAVE_PATH)
 print("\nConfusion matrix plot saved as 'confusion_matrix.png'")
