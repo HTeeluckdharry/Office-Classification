@@ -50,7 +50,7 @@ This project requires Python 3.8+ and the following libraries.
     ```bash
     pip install tensorflow scikit-learn matplotlib seaborn opencv-python pillow
     ```
-3.  (optional) Raw dataset avaiable here: https://livemdxac-my.sharepoint.com/:u:/r/personal/ht550_live_mdx_ac_uk/Documents/Office%20Classification.zip?csf=1&web=1&e=ghLq8p
+3.  (optional) Raw dataset avaiable here: [https://livemdxac-my.sharepoint.com/:u:/r/personal/ht550_live_mdx_ac_uk/Documents/Office%20Classification.zip?csf=1&web=1&e=ghLq8p](https://livemdxac-my.sharepoint.com/:u:/g/personal/ht550_live_mdx_ac_uk/EXAFz9VJy2NEoZOgyzHVfZoBgKblOZ91iK8qPhzyFPomUg?e=TToTeW)
 
 ## 🚀 How to Use
 
