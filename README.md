@@ -25,7 +25,8 @@ Office-Classification/
 │   ├── confusion_matrix.png
 │
 ├── test_images/          
-│   └── testclassifier.jpg
+│   └── pen.jpg
+│   └── etc..
 │
 ├── .gitignore           
 ├── README.md
