@@ -47,7 +47,7 @@ This project requires Python 3.8+ and the following libraries.
 1.  Clone or download this repository.
 2.  Install the required packages using pip:
     ```bash
-    pip install tensorflow scikit-learn matplotlib seaborn opencv-python
+    pip install tensorflow scikit-learn matplotlib seaborn opencv-python pillow
     ```
 
 ## 🚀 How to Use
@@ -57,7 +57,7 @@ There are three main scripts to use:
 ### 1. Training the Model
 To train the model from scratch using the images in the `train/` and `valid/` folders:
 ```bash
-python train.py
+python src/train.py
 ```
 This script will:
 
@@ -81,15 +81,15 @@ This will load `office_goods_classifier.keras` and print the accuracy, F1-score,
 
 ### 3. Running the classifier
 
-This script is used for live inference. It loads the saved `office_goods_classifier.keras` model.
+This script loads the saved model and provides a graphical user interface to perform inference.
 ```bash
-python classifier.py
+python src/classifier.py
 ```
-When you run it, you will be prompted to choose a mode:
+GUI window will open, presenting two options:
 
-Mode 1 (Live Camera): Opens your webcam for real-time classification.
+* Live Camera: Hides the menu and opens your webcam for real-time classification. Press 'q' to close the camera feed and return to the main menu.
 
-Mode 2 (Single Image): Asks for the path to an image file.
+* Classify Single Image File: Opens a file dialog. Select an image, and a new pop-up window will appear showing the image, the classification result and a "Back to Menu" button.
 
 ### 📊 Evaluation Results
 The model was evaluated on a held-out test set.
